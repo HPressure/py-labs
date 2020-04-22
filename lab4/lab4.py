@@ -51,7 +51,8 @@ class Wagon():
 
 
 class WagonPass(Wagon):
-    def __init__(self):
+    def __init__(self, place=''):
+        self.place = place
         self.type = 'passenger'
 
     def __repr__(self):
@@ -64,6 +65,24 @@ class WagonCargo(Wagon):
 
     def __repr__(self):
         return ".(_ _)"
+
+
+class WagonPassCoupe(WagonPass):
+    def __init__(self, place=''):
+        super().__init__(place)
+        self.comf_type = 'coupe'
+
+
+class WagonPassPlat(WagonPass):
+    def __init__(self, place=''):
+        super().__init__(place)
+        self.comf_type = 'plat'
+
+
+class WagonPassSit(WagonPass):
+    def __init__(self, place=''):
+        super().__init__(place)
+        self.comf_type = 'sit'
 
 
 train = TrainPass(10000)
