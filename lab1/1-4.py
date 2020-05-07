@@ -1,8 +1,16 @@
+def is_prime(n):
+    if(n == 1):
+        return False
+    else:
+        d = 2
+        while d * d <= n and n % d != 0:
+            d += 1
+        return d * d > n
+
+
 num = int(input())
-i = 1
 sum = 0
-while(i < num):
-    if (i % 10 == 3):
+for i in range(1, num):
+    if (is_prime(i)):
         sum += i
-    i += 1
 print(sum)
